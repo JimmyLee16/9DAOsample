@@ -1,138 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>9DAO Security Portal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>9DAO Sample - Chia sẻ</title>
+  <meta name="description" content="9DAO Sample project focused on Cardano governance education." />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="9DAO Sample project" />
+  <meta property="og:description" content="Exploring the multi-chain DAO world through resources, videos, and hands-on guides." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/JimmyLee16/9DAOsample/main/1.png" />
+  <meta property="og:url" content="https://9daosample.netlify.app/" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="9DAO Sample project" />
+  <meta name="twitter:description" content="Exploring the multi-chain DAO world through resources, videos, and hands-on guides." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/JimmyLee16/9DAOsample/main/1.png" />
+
   <style>
-    body { 
-      margin: 0; 
-      background: #0a0a0a; 
-      color: #ddd;
-      font-family: monospace;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
     }
-    #app { 
-      height: 100vh; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    #figma-container {
+      width: 100%;
+      height: 100vh;
     }
   </style>
 </head>
 <body>
-  <div id="app">Initializing quantum encryption...</div>
+  <div id="figma-container"></div>
 
   <script>
-    // ======= LỚP 1: GIẢ MẠO BIẾN TOÁN HỌC =======
-    const quantumMatrix = [
-      Math.log2(32768), 
-      Math.atan(1) * 4,
-      parseInt("1101", 2),
-      "btoa".length,
-      "".constructor.length
-    ];
-
-    // ======= LỚP 2: MÃ HÓA ĐA TẦNG KHÔNG DÙNG BASE64 TRỰC TIẾP =======
-    const cyberEncode = (function() {
-      const secretAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
-      return function(data) {
-        let buffer = "";
-        for (let i = 0; i < data.length; i++) {
-          const charCode = data.charCodeAt(i);
-          // Mã hóa Caesar đảo ngược kết hợp bit shift
-          buffer += secretAlphabet[
-            ((charCode >> 4) ^ (i % 8)) & 0x1F
-          ];
-          buffer += secretAlphabet[
-            ((charCode & 0x0F) ^ ((i + 5) % 8)) & 0x1F
-          ];
-        }
-        return buffer;
-      };
-    })();
-
-    // ======= LỚP 3: PHÂN MẢNH DỮ LIỆU NGẪU NHIÊN =======
-    const dataFragments = [
-      "GFTWK3RAMJQXG5DVM", 
-      "N5UW4ZDPO5XXO3LBN",
-      "VQWY5LQMFYGC3TBOJ"
-    ].map(s => s.split('').reverse().join(''));
-
-    // ======= LỚP 4: HÀM GIẢI MÃ GÂY NHIỄU =======
-    function quantumDecrypt(frags) {
-      // Bước 1: Xáo trộn các fragment theo quantumMatrix
-      const shuffled = frags.map((f, i) => 
-        f.substr(quantumMatrix[i] % 3, f.length - 2)
-      ).reverse();
-
-      // Bước 2: Tái hợp nhất với thuật toán XOR tùy biến
-      let reconstructed = "";
-      for (let i = 0; i < shuffled[0].length; i++) {
-        const quantumByte = (
-          shuffled[0].charCodeAt(i) ^ 
-          shuffled[1].charCodeAt(i % shuffled[1].length) ^ 
-          (quantumMatrix[2] << 2)
-        );
-        reconstructed += String.fromCharCode(quantumByte);
-      }
-
-      // Bước 3: Giải mã bằng alphabet tùy chỉnh
-      let result = "";
-      for (let i = 0; i < reconstructed.length; i += 2) {
-        const hi = (secretAlphabet.indexOf(reconstructed[i]) << 4);
-        const lo = secretAlphabet.indexOf(reconstructed[i+1]);
-        result += String.fromCharCode(hi | lo);
-      }
-      
-      return result;
-    }
-
-    // ======= LỚP 5: CƠ CHẾ ANTI-ANALYSIS =======
-    function createBlackHole() {
-      const trap = new Proxy({}, {
-        get: () => () => {
-          document.body.innerHTML = "<h1>Quantum firewall activated</h1>";
-          window.stop();
-        }
-      });
-      window.console = trap;
-      window.performance = trap;
-    }
-
-    // ======= LỚP 6: KÍCH HOẠT BẢO MẬT =======
-    setTimeout(() => {
-      try {
-        // Kích hoạt bẫy anti-debug
-        if (new Date().getTime() > 0x7FFFFFFF) createBlackHole();
-        
-        // Giải mã lượng tử
-        const portal = quantumDecrypt(dataFragments);
-        
-        // Xác thực lượng tử
-        if (!portal.startsWith(String.fromCharCode(104, 116, 116, 112))) {
-          throw new Error("Quantum signature mismatch");
-        }
-
-        // Render iframe với CSP cực mạnh
-        document.getElementById('app').innerHTML = `
-          <iframe 
-            src="${portal}" 
-            sandbox="allow-scripts allow-same-origin"
-            style="width:100vw;height:100vh;border:none"
-          ></iframe>
-        `;
-        
-        // Bảo vệ real-time
-        setInterval(() => {
-          if (!document.querySelector('iframe')) {
-            document.body.innerHTML = "<h1>Quantum breach detected</h1>";
-          }
-        }, 2000);
-        
-      } catch (e) {
-        document.getElementById('app').textContent = 
-          `Quantum error: ${e.message}`;
-      }
-    }, 2000); // Trễ lượng tử
+    // Encoded Figma URL (base64 of "https://shed-wrap-10870026.figma.site/")
+    const encoded = "aHR0cHM6Ly9zaGVkLXdyYXAtMTA4NzAwMjYuZmlnbWEuc2l0ZS8=";
+    
+    // Decode and embed
+    const url = atob(encoded);
+    document.getElementById("figma-container").innerHTML = 
+      `<iframe src="${url}" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
   </script>
 </body>
 </html>
