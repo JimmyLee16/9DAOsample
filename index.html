@@ -22,29 +22,30 @@
   <div id="loader">Loading secure content...</div>
 
   <script>
-    // 🔒 PHẦN TỰ ĐỘNG GIẢI MÃ (KHÔNG CẦN CHỈNH SỬA)
+    // 🔒 PHIÊN BẢN ĐƠN GIẢN KHÔNG DÙNG WASM
     (function(){
-      // Dữ liệu đã mã hóa (URL Figma của bạn)
-      const data = [
-        159,42,78,211,89,183,200,112,33,177,164,63,
-        77,230,145,12,55,199,82,117,188,99,203,19
+      // 1. Dữ liệu đã mã hóa (URL của bạn)
+      const chunks = [
+        "Zmx0aHdzOi8v", 
+        "c2hlZC13cmFw",
+        "LTEwODcwMDI2",
+        "LmZpZ21hLnNpdGUv"
       ];
       
-      // Khóa giải mã (đã obfuscate)
-      const key = [55,22,77,88,99,11,22,88,33,44,55,66];
-      
-      // Tự động giải mã khi trang load
+      // 2. Giải mã khi trang load
       setTimeout(() => {
         try {
-          let url = "";
-          for(let i = 0; i < data.length; i++) {
-            url += String.fromCharCode(data[i] ^ key[i % key.length]);
+          // Ghép các phần và giải mã
+          const url = atob(chunks.join(''))
+                     .split('').reverse().join('')
+                     .replace('flthws', 'https');
+          
+          // Kiểm tra bảo mật
+          if(!url.includes('figma.site')) {
+            throw new Error('Invalid URL format');
           }
           
-          // Kiểm tra URL hợp lệ
-          if(!url.includes('figma.site')) throw new Error('Invalid URL');
-          
-          // Tạo iframe
+          // Hiển thị iframe
           document.body.innerHTML = `
             <iframe 
               src="${url}" 
@@ -53,10 +54,16 @@
               allowfullscreen
             ></iframe>
           `;
+          
         } catch(e) {
-          document.body.innerHTML = `<h1 style="color:red">Error loading content</h1>`;
+          document.getElementById('loader').innerHTML = `
+            <div style="color:red;text-align:center">
+              <h3>LOADING ERROR</h3>
+              <p>${e.message}</p>
+            </div>
+          `;
         }
-      }, 1000); // Delay để chống phân tích
+      }, 800); // Delay chống phân tích
     })();
   </script>
 </body>
