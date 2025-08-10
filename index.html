@@ -21,8 +21,17 @@
         0x2b, 0x76, 0x6c, 0x71, 0x60, 0x2a               // ".site/" XOR 5
       ];
       
-      // 2. Key đơn giản
-      const key = 5;
+      // 2. Key cực phức tạp
+      const obfuscate = {
+        _data: [0x39, 0x44, 0x41, 0x4F], // "9DAO"
+        _salt: 0xDEADBEEF,
+        _mix: function(x) { return ((x << 3) ^ (x >>> 5)) & 0xFF; },
+        getKey: function() {
+          let hash = this._data.reduce((a,b,i) => a + this._mix(b) * (i+1), 0);
+          return ((hash ^ this._salt) >>> 8) % 256;
+        }
+      };
+      const key = obfuscate.getKey(); // Vẫn = 5 nhưng cực kì phức tạp
       
       // 3. Giải mã XOR
       function getUrl() {
