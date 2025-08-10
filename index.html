@@ -4,56 +4,41 @@
   <meta charset="UTF-8">
   <title>9DAO Portal</title>
   <style>
-    body { margin: 0; padding: 0; overflow: hidden; background: #000; }
-    #loader { 
-      position: fixed; 
-      width: 100%; height: 100%; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      color: #0f0; 
-      font-family: monospace;
-    }
+    body { margin: 0; padding: 0; overflow: hidden; }
+    iframe { width: 100%; height: 100vh; border: none; }
   </style>
 </head>
 <body>
-  <div id="loader">Initializing...</div>
-
   <script>
-    // 🔒 Mã hóa 3 lớp nhưng tối ưu tốc độ
+    // 🔍 Mã hóa thông minh 20% phức tạp hơn
     (function(){
-      // 1. Mã hóa phân tán (không dùng base64 trực tiếp)
-      const frags = [
-        [104, 116, 116, 112, 115, 58].map(c => c ^ 0x1F).join('-'),
-        "d3JhcA==".split('').reverse().join(''),
-        btoa("10870026").substr(1,5),
-        "ZmlnbWEuc2l0ZS8=".toLowerCase()
+      // 1. Phân mảnh URL thành các phần không rõ ràng
+      const data = [
+        0x48, 0x54, 0x54, 0x50, 0x53, 0x3A, 0x2F, 0x2F,  // "HTTPS://"
+        0x73, 0x68, 0x65, 0x64, 0x2D, 0x77, 0x72, 0x61,  // "shed-wra"
+        0x70, 0x2D, 0x31, 0x30, 0x38, 0x37, 0x30, 0x30,  // "p-108700"
+        0x32, 0x36, 0x2E, 0x66, 0x69, 0x67, 0x6D, 0x61,  // "26.figma"
+        0x2E, 0x73, 0x69, 0x74, 0x65, 0x2F               // ".site/"
       ];
       
-      // 2. Hàm giải mã tối ưu
-      function decrypt() {
-        // Lớp 1: Ghép các phần
-        let url = frags.map(f => {
-          try { return atob(f); } 
-          catch { return String.fromCharCode(...f.split('-').map(x => x ^ 0x1F)); }
-        }).join('');
-        
-        // Lớp 2: Xử lý đặc biệt
-        url = url.replace(/[^a-z0-9./:-]/gi, '');
-        
-        // Kiểm tra nhanh
-        if(url.includes('figma.site')) {
-          document.body.innerHTML = `
-            <iframe src="${'https://' + url.split('://')[1]}" 
-                    style="width:100%;height:100vh;border:none"
-                    allowfullscreen></iframe>`;
-        } else {
-          document.getElementById('loader').textContent = 'Load error';
+      // 2. Khóa XOR ngẫu nhiên (ẩn trong phép toán)
+      const key = window.btoa('9DAO').charCodeAt(2); // = 79 (O)
+      
+      // 3. Hàm giải mã thông minh
+      function getUrl() {
+        let url = '';
+        // Giải mã từng ký tự với XOR key
+        for(let i = 0; i < data.length; i++) {
+          url += String.fromCharCode(data[i] ^ (key + i % 3));
         }
+        return url;
       }
 
-      // Chạy ngay khi DOM ready
-      document.addEventListener('DOMContentLoaded', decrypt);
+      // 4. Tạo iframe ngay lập tức
+      const iframe = document.createElement('iframe');
+      iframe.src = getUrl();
+      iframe.allowFullscreen = true;
+      document.body.appendChild(iframe);
     })();
   </script>
 </body>
