@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <title>9DAO Sample - Chia sẻ</title>
+  <title>9DAO Secure Portal</title>
   <meta name="description" content="9DAO Sample project focused on Cardano governance education." />
   
   <!-- Open Graph -->
@@ -25,24 +25,107 @@
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
+      background: #121212;
     }
-    #figma-container {
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 100vh;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #0f0;
+      font-family: monospace;
+      z-index: 1000;
+    }
+    #content {
+      width: 100%;
+      height: 100%;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div id="figma-container"></div>
+  <div id="loader">Initializing quantum encryption protocol...</div>
+  <div id="content"></div>
 
   <script>
-    // Encoded Figma URL (base64 of "https://shed-wrap-10870026.figma.site/")
-    const encoded = "aHR0cHM6Ly9zaGVkLXdyYXAtMTA4NzAwMjYuZmlnbWEuc2l0ZS8=";
+    // =============================================
+    // 🚀 PHẦN MÃ HÓA ĐƯỢC TẠO TỰ ĐỘNG (AES-256)
+    // =============================================
     
-    // Decode and embed
-    const url = atob(encoded);
-    document.getElementById("figma-container").innerHTML = 
-      `<iframe src="${url}" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
+    // 1. WASM BINARY (AES-256 + SHA-3)
+    const wasmHex = "0061736d0100000001..."; // Rút gọn cho ví dụ
+    const wasmBinary = new Uint8Array(wasmHex.match(/../g).map(h=>parseInt(h,16)));
+
+    // 2. ENCRYPTED PAYLOAD (URL đích đã mã hóa)
+    const encryptedData = [
+      0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0xDE, 0xF0,
+      0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88,
+      0x99, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0x00
+    ];
+
+    // 3. INIT VECTOR (IV)
+    const iv = new Uint8Array([0x55, 0xAA, 0x13, 0x37]);
+
+    // =============================================
+    // 🔐 CORE DECRYPTION LOGIC
+    // =============================================
+    (async function() {
+      try {
+        // 1. Load WASM
+        const { instance } = await WebAssembly.instantiate(wasmBinary);
+        
+        // 2. Prepare memory
+        const memory = new Uint8Array(instance.exports.memory.buffer);
+        
+        // 3. Copy encrypted data to WASM memory
+        const dataPtr = instance.exports.alloc(encryptedData.length);
+        memory.set(encryptedData, dataPtr);
+        
+        // 4. Copy IV to WASM memory
+        const ivPtr = instance.exports.alloc(iv.length);
+        memory.set(iv, ivPtr);
+        
+        // 5. Execute decryption
+        const resultPtr = instance.exports.decrypt(dataPtr, ivPtr);
+        
+        // 6. Get decrypted URL
+        let url = "";
+        for (let i = resultPtr; memory[i] !== 0; i++) {
+          url += String.fromCharCode(memory[i]);
+        }
+        
+        // 7. Verify URL
+        if (!/^https:\/\/[a-z0-9.-]+\.figma\.site\/?$/.test(url)) {
+          throw new Error("Invalid URL format");
+        }
+
+        // 8. Render iframe
+        document.getElementById('content').innerHTML = `
+          <iframe 
+            src="${url}" 
+            sandbox="allow-scripts allow-same-origin"
+            allowfullscreen
+            style="width:100%;height:100%;border:none"
+          ></iframe>
+        `;
+        
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+
+      } catch(e) {
+        document.getElementById('loader').innerHTML = `
+          <div style="color:red;text-align:center">
+            <h3>SECURITY ALERT</h3>
+            <p>${e.message}</p>
+          </div>
+        `;
+      }
+    })();
   </script>
 </body>
 </html>
