@@ -1,4 +1,4 @@
-# Cardano Catalyst Landing Page
+# 9 DAO sample Page
 
 React + TypeScript landing page for Cardano Catalyst Proposal.
 
