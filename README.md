@@ -1,6 +1,6 @@
 # 9 DAO sample Page
 
-React + TypeScript landing page for Cardano Catalyst Proposal.
+React + TypeScript landing page for "9 DAO sample project" Catalyst Proposal.
 
 ## Development
 ```bash
