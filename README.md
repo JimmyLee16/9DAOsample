@@ -1,4 +1,5 @@
 ##Foreword
+
 Hello, I have been part of the Cardano ecosystem and community since 2020. Throughout this journey, I have had the opportunity to engage with various projects, communities, and Cardano governance activities.
 
 Currently, I serve as:
