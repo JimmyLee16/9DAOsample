@@ -16,11 +16,11 @@
 * [Research scope](articles/research-scope.md)
 * [What is DAO](articles/what-is-dao.md)
 * [Singularity Dao](articles/singularity-dao.md)
-* [1st - Arbitrum](articles/editor.md)
-* [2nd - Polkadot](articles/markdown.md)
-* [3rd - Tron](articles/images-and-media.md)
-* [4th - Minswap](articles/interactive-blocks.md)
-* [5th - Sundae](articles/5th-sundae.md)
+* [1st - Arbitrum](articles/arbitrum.md)
+* [2nd - Polkadot](articles/polkadot.md)
+* [3rd - Tron](articles/tron.md)
+* [4th - Minswap](articles/minswap.md)
+* [5th - Sundae](articles/sundae.md)
 * [6th](articles/integrations.md)
 
 ***
