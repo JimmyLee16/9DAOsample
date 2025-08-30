@@ -51,13 +51,13 @@ Gov tool source: [https://gov.tools/governance\_actions/207b226e110e13bb18b119fc
 
 ![](../../../.gitbook/assets/18.png)
 
+![](../../../.gitbook/assets/19.jpeg)
+
 <iframe 
   src="https://ipfs.io/ipfs/bafybeiezgj4gu6fyxfpnu7h7cgrhfyyvbn4ve72ytpxrv7cmatbok32e4m"
   width="100%" 
   height="800" 
   style="border:none;">
 </iframe>
-
-![](../../../.gitbook/assets/19.jpeg)
 
 ![](../../../.gitbook/assets/20.png)
