@@ -1,5 +1,5 @@
 ---
-description: Cardano constitution 2.0 (amendment)
+description: Cardano constitution 2.0 (amendments)
 ---
 
 # Cardano constitution 2.0 (amendment)
