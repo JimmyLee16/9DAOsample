@@ -4,6 +4,8 @@ description: Cardano constitution 2.0 (unofficial)
 
 # Cardano constitution 2.0 (unofficial)
 
+## CARDANO BLOCKCHAIN ECOSYSTEM CONSTITUTION
+
 ## PREAMBLE
 
 Cardano is a decentralized ecosystem of blockchain technology, smart
