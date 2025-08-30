@@ -31,7 +31,8 @@
 ## Knowledge base
 
 * [Cardano](knowledge-base/cardano/README.md)
-  * [Cardano constitution](knowledge-base/cardano/cardano-constitution.md)
+  * [Cardano constitution 1.0](knowledge-base/cardano/cardano-constitution-1.0.md)
+  * [Copy of Cardano constitution 2.0](knowledge-base/cardano/copy-of-cardano-constitution-2.0.md)
 * [Arbitrum](knowledge-base/arbitrum.md)
 * [Polkadot](knowledge-base/polkadot/README.md)
   * [Governance V1](knowledge-base/polkadot/governance-v1.md)
