@@ -10,33 +10,13 @@ description: Cardano constitution 2.0 (unofficial)
 
 Cardano is a decentralized ecosystem of blockchain technology, smart
 
-contracts, and community governance, committed to improving economic, political, and social systems for everyone, everywhere. By offering this
+contracts, and community governance, committed to improving economic, political, and social systems for everyone, everywhere. By offering this foundational infrastructure, Cardano empowers individuals and communities to manage their identity, value and governance, fostering the emergence of decentralized applications, businesses and network states.
 
-foundational infrastructure, Cardano empowers individuals and communities to manage their identity, value and governance, fostering the emergence of decentralized applications, businesses and network states.
+Through unbiased processing of immutable data, we, the participants of the Cardano Community, consisting of individuals, organizations, contributors and others, choose to follow in the footsteps of the early Internet and cryptocurrency pioneers, who first forged bonds of community through digital technologies. We are guided by our shared principles and tenets as we exercise our self-governance by balancing decentralized decision-making with accountability and safeguarding the security of the Cardano Blockchain.
 
-Through unbiased processing of immutable data, we, the participants of the Cardano Community, consisting of individuals, organizations, contributors and others, choose to follow in the footsteps of the early Internet and
+Recognizing the need for a more robust and dynamic governance framework, that neither relies nor depends upon traditional nation-state governance systems, but instead relies on self-governance by the Cardano Community, utilizing, wherever possible and beneficial, blockchain technology in the governance process, we hereby establish this Cardano Constitution to govern the Cardano Blockchain ecosystem, ensure the continuity of the Cardano Blockchain, and guard the rights of those who utilize it and the rights of those who own ada.
 
-cryptocurrency pioneers, who first forged bonds of community through
-
-digital technologies. We are guided by our shared principles and tenets as
-
-we exercise our self-governance by balancing decentralized decision-making with accountability and safeguarding the security of the Cardano
-
-Blockchain.
-
-Recognizing the need for a more robust and dynamic governance
-
-framework, that neither relies nor depends upon traditional nation-state
-
-governance systems, but instead relies on self-governance by the Cardano Community, utilizing, wherever possible and beneficial, blockchain
-
-technology in the governance process, we hereby establish this Cardano Constitution to govern the Cardano Blockchain ecosystem, ensure the
-
-continuity of the Cardano Blockchain, and guard the rights of those who utilize it and the rights of those who own ada.
-
-With these purposes in mind, we, the Cardano Community, affirm our intention to abide by this Constitution in order to participate in the
-
-governance of the Cardano Blockchain ecosystem. We invite all who share our values to join us for as long as they wish, while honoring the freedom to take another path.
+With these purposes in mind, we, the Cardano Community, affirm our intention to abide by this Constitution in order to participate in the governance of the Cardano Blockchain ecosystem. We invite all who share our values to join us for as long as they wish, while honoring the freedom to take another path.
 
 \
 
@@ -46,12 +26,7 @@ governance of the Cardano Blockchain ecosystem. We invite all who share our valu
 \
 
 
-1. Active Voting Stake. The total amount of lovelace that is delegated to active DReps or SPOs. This stake is used as the basis for calculating voting thresholds and adjudicating proposed Governance action
-
-outcomes. It excludes stake delegated to inactive DReps, the predefined abstain voting option, unregistered stake, and registered undelegated
-
-stake.
-
+1. Active Voting Stake. The total amount of lovelace that is delegated to active DReps or SPOs. This stake is used as the basis for calculating voting thresholds and adjudicating proposed Governance action outcomes. It excludes stake delegated to inactive DReps, the predefined abstain voting option, unregistered stake, and registered undelegated stake.
 2. Ada Holders. Persons who directly control the private key(s) to ada token(s).\
 
 3. Cardano Community. The collective group of all individuals and organizations that, in embracing the shared principles and objectives set forth in the Cardano Blockchain Ecosystem Constitution, own ada, develop, build on, support, maintain, contribute to, and use the Cardano Blockchain.
@@ -64,13 +39,8 @@ Constitutional Committee.
 7. Delegated Representative (DRep). The individual or entity registered to vote with respect to on-chain governance actions for its own behalf or on behalf of other owners of ada.
 8. Net Change Limit. Means the maximum amount or percentage by which the Cardano Treasury may not be reduced by in a given period.
 9. Stake Pool Operator (SPO). An individual or entity that manifests intent through the signed transactions of a Stake Pool.
-10. Stake Pool. A Stake Pool Operator's Block producing node, identified by a unique Stake Pool ID, which aggregates applicable Delegator stake, forges and validates Blocks, and facilitates contributions of the SPO to the Cardano Blockchain's security, decentralization, consensus
-
-mechanism, and governance process.
-
-11. Treasury Withdrawal Recipient. A person or entity who is indicated as
-
-the recipient of ada from the Cardano Treasury in the relevant treasury withdrawal governance action
+10. Stake Pool. A Stake Pool Operator's Block producing node, identified by a unique Stake Pool ID, which aggregates applicable Delegator stake, forges and validates Blocks, and facilitates contributions of the SPO to the Cardano Blockchain's security, decentralization, consensus mechanism, and governance process.
+11. Treasury Withdrawal Recipient. A person or entity who is indicated as the recipient of ada from the Cardano Treasury in the relevant treasury withdrawal governance action
 
 \
 
@@ -79,9 +49,7 @@ the recipient of ada from the Cardano Treasury in the relevant treasury withdraw
 
 ### Section 1 Guiding Tenets
 
-These below Tenets shall guide all Cardano Community members and proposed governance actions shall be evaluated in accordance with these Tenets. The order in which the below Tenets appear is not intended to
-
-represent a priority among Tenets.
+These below Tenets shall guide all Cardano Community members and proposed governance actions shall be evaluated in accordance with these Tenets. The order in which the below Tenets appear is not intended to represent a priority among Tenets.
 
 TENET 1 Transactions on the Cardano Blockchain shall not be slowed down or censored and shall be expediently served for their intended purpose.\
 
@@ -115,31 +83,16 @@ total supply of ada shall not exceed 45,000,000,000 (45,000,000,000,000,000 love
 
 ### Section 2 Implementation of Guardrails
 
-1. The Cardano Blockchain shall operate in accordance with the Cardano Blockchain Guardrails Appendix to this Constitution. The Cardano
-
-Community may digitally codify certain Guardrails such that the Guardrails are directly programmed and implemented on the Cardano Blockchain using on-chain Guardrails Script or built-in ledger rules.
-
-2. In the event there are inconsistencies between a Guardrail as set forth in the Cardano Blockchain Guardrails Appendix and any such Guardrail that has been programmed and implemented on the Cardano
-
-Blockchain, the version of such Guardrail that has been deployed directly on the Cardano Blockchain shall prevail unless and until
-
-replaced or revised pursuant to an on-chain governance action. The CC shall seek to reconcile such inconsistencies through the encouragement of an appropriate on-chain governance action.\
+1. The Cardano Blockchain shall operate in accordance with the Cardano Blockchain Guardrails Appendix to this Constitution. The Cardano Community may digitally codify certain Guardrails such that the Guardrails are directly programmed and implemented on the Cardano Blockchain using on-chain Guardrails Script or built-in ledger rules.
+2. In the event there are inconsistencies between a Guardrail as set forth in the Cardano Blockchain Guardrails Appendix and any such Guardrail that has been programmed and implemented on the Cardano Blockchain, the version of such Guardrail that has been deployed directly on the Cardano Blockchain shall prevail unless and until replaced or revised pursuant to an on-chain governance action. The CC shall seek to reconcile such inconsistencies through the encouragement of an appropriate on-chain governance action.\
 
 
 ## ARTICLE II. COMMUNITY AND GOVERNANCE
 
 ### Section 1 The Cardano Community
 
-1. Cardano Community members are entitled to the rights, privileges, and protections of this Constitution, and are accordingly expected to
-
-support and uphold this Constitution, maintain the integrity of the ecosystem, participate in governance, and resolve disputes
-
-transparently.
-
+1. Cardano Community members are entitled to the rights, privileges, and protections of this Constitution, and are accordingly expected to support and uphold this Constitution, maintain the integrity of the ecosystem, participate in governance, and resolve disputes transparently.
 2. Cardano Community members are encouraged to collaborate on developing applications and to form organizations that support the Cardano Blockchain and the Cardano Community.
-
-\
-
 
 ### Section 2 Participation Rights of Ada Holders
 
@@ -154,21 +107,10 @@ accordance with the Guardrails, and otherwise taking part in on-chain governance
 6. Ada owners who use third-party custodians or other designees to hold their ada may authorize, or withhold authorization from, such third parties to vote or delegate the owners' voting rights to registered DReps on the owners' behalf.
 7. Ada Holders have the right to a process for participating in, submitting and voting on on-chain governance actions that is open,transparent and protected from undue influence and manipulation.
 
-\
-
-
 ### Section 3 Decentralized Governance Framework
 
 1. The Cardano Blockchain is governed by a decentralized, on-chain model that, where beneficial, uses smart contracts and other blockchain tools to facilitate decision-making and ensure transparency.
-2. Three independent voting bodies - DReps, SPOs, and the CC -
-
-participate in on-chain voting; anyone holding multiple roles must\
-
-
-publicly disclose such overlaps before engaging in any on-chain governance actions.
-
-\
-
+2. Three independent voting bodies - DReps, SPOs, and the CC - participate in on-chain voting; anyone holding multiple roles must publicly disclose such overlaps before engaging in any on-chain governance actions.
 
 ### Section 4: Delegated Representatives
 
@@ -177,42 +119,19 @@ publicly disclose such overlaps before engaging in any on-chain governance actio
 3. DReps shall ensure that any compensation received in connection with their activities as a DRep is publicly disclosed in a timely manner through relevant governance communication channels.
 4. DReps shall not offer or provide compensation to an Ada Holder or in exchange for being appointed as a DRep or for voting on their behalf.
 
-\
-
-
 ### Section 5: Stake Pool Operators
 
-1. Stake Pool Operators shall vote on the following governance actions: (i) Motion of No Confidence, (ii) Update Committee/Threshold, (iii) Hard Fork Initiation, (iv) Protocol Parameter Changes that affect security-
-
-relevant parameters, and (v) Info Actions. For each of these governance actions, SPOs shall cast their votes separately from DReps in
-
-accordance with the Guardrails.
-
+1. Stake Pool Operators shall vote on the following governance actions: (i) Motion of No Confidence, (ii) Update Committee/Threshold, (iii) Hard Fork Initiation, (iv) Protocol Parameter Changes that affect security- relevant parameters, and (v) Info Actions. For each of these governance actions, SPOs shall cast their votes separately from DReps in accordance with the Guardrails.
 2. SPOs shall publicly disclose if they are simultaneously voting as a DRep on the same governance actions.
-3. SPOs vote on \\"Hard Fork Initiation\\", "No Confidence", "Update
-
-Committee", and \\"Parameter Update\\" governance actions that affect
-
-security-critical parameters set forth under Parameters that are Critical to the Operation of the Blockchain in Section 2.1 of the Cardano Blockchain Guardrails Appendix.
-
-\
-
+3. SPOs vote on \\"Hard Fork Initiation\\", "No Confidence", "Update Committee", and \\"Parameter Update\\" governance actions that affect security-critical parameters set forth under Parameters that are Critical to the Operation of the Blockchain in Section 2.1 of the Cardano Blockchain Guardrails Appendix.
 
 ### Section 6 Governance Action Standards
 
-1. To ensure transparency in on-chain governance, proposed governance actions shall follow a standardized and legible format before being recorded or enacted on-chain. This format shall include a URL, hosting a document that outlines additional context for the proposed
-
-governance action, and hash of this document. The document hosted by such a URL shall be immutable in nature and incapable of being altered after submission of the proposed governance action for on-chain voting.
-
+1. To ensure transparency in on-chain governance, proposed governance actions shall follow a standardized and legible format before being recorded or enacted on-chain. This format shall include a URL, hosting a document that outlines additional context for the proposed governance action, and hash of this document. The document hosted by such a URL shall be immutable in nature and incapable of being altered after submission of the proposed governance action for on-chain voting.
 2. Each proposal shall provide sufficient rationale, including at minimum: a title, abstract, justification, and relevant supporting materials.
 3. The content of every on-chain governance action must be identical to the final off-chain version of the proposed action.\
 
-4. \\"Hard Fork Initiation\\" and \\"Parameter Update\\" actions shall undergo sufficient technical review and scrutiny as mandated by the Guardrails to ensure that the governance action does not endanger the security,
-
-functionality, performance or long-term sustainability of the Cardano Blockchain.
-
-\
-
+4. \\"Hard Fork Initiation\\" and \\"Parameter Update\\" actions shall undergo sufficient technical review and scrutiny as mandated by the Guardrails to ensure that the governance action does not endanger the security, functionality, performance or long-term sustainability of the Cardano Blockchain.
 
 ### Section 7 Treasury Withdrawal Governance Action Standards
 
@@ -220,9 +139,7 @@ A Treasury withdrawal governance action must meet all of the following requireme
 
 1. Treasury withdrawal governance actions must, in addition to the requirements at Section 6 above, specify the terms of the withdrawal.
 
-This shall include: the purpose of the withdrawal, the period for
-
-delivery of proposed activities which the withdrawal shall be used for, the relevant costs and expenses of the proposed activities, circumstances under which the withdrawal might be refunded to the Cardano treasury, the location and the identity of the recipient.
+This shall include: the purpose of the withdrawal, the period for delivery of proposed activities which the withdrawal shall be used for, the relevant costs and expenses of the proposed activities, circumstances under which the withdrawal might be refunded to the Cardano treasury, the location and the identity of the recipient.
 
 2. Treasury withdrawal governance actions shall disclose whether the
 
