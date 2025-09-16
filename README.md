@@ -1,26 +1,11 @@
-## Foreword
 
-Hello, I have been part of the Cardano ecosystem and community since 2020. Throughout this journey, I have had the opportunity to engage with various projects, communities, and Cardano governance activities.
+  # Cardano Catalyst Proposal Landing Page
 
-Currently, I serve as:
+  This is a code bundle for Cardano Catalyst Proposal Landing Page. The original project is available at https://www.figma.com/design/E8Kjs8RLHxpEvOn2aWApac/Cardano-Catalyst-Proposal-Landing-Page.
 
-- **Admin** of a large Cardano community with tens of thousands of members  
-- **Cardano Ambassador**  
-- **Vietnam Constitutional Delegate**  
-- **Pool operator**
+  ## Running the code
 
-From my hands-on experience within Cardano, I have come to realize that decentralized governance is not only a core pillar of any blockchain ecosystem but also one of its most frequent activities. It manifests across all levels:
+  Run `npm i` to install the dependencies.
 
-- At the ecosystem-wide level  
-- Within individual projects  
-- Among local communities  
-- Even within small groups of people with a shared purpose  
-
-Yet, one critical question often remains unanswered in governance discussions:  
-**“What are the strengths and weaknesses of decentralized governance across different blockchain ecosystems?”**
-
-If we could explore this question through structured surveys or case studies—similar to how DAOs such as **Minswap** and **Liqwid** operate—I believe the insights would be *fascinating and highly valuable*.
-
-This is precisely why I decided to create this documentation project: to collect, analyze, and consolidate different models of decentralized governance across the blockchain world and at every level of practice.
-
-The idea and groundwork for this initiative started more than two years ago. Importantly, this is a **public resource**—and whether I receive external support or not, I am committed to continuing its development, as a personal contribution to the broader community.
+  Run `npm run dev` to start the development server.
+  
